@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Planeta Palets | Paletes sob medida e recicláveis em Canelinha, SC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:wght@800&family=Figtree:wght@400;600&display=swap">
+<style>
+:root{--bg:#eef7f6;--ink:#0b2a4a;--mute:#46606f;--pine:#12a0a0;--blue:#0a5cb8;--forest:#12804b;--onf:#fff;--card:#fff;--line:rgba(11,42,74,.18);--hd:'Big Shoulders Stencil',Impact,'Arial Narrow',sans-serif;--bd:'Figtree',system-ui,sans-serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1b2e;--ink:#e8f4f6;--mute:#a9c3cf;--pine:#3cc9c0;--blue:#0a4a96;--forest:#3fbf7f;--onf:#06231a;--card:#10283f;--line:rgba(232,244,246,.22)}}
+:root[data-theme="dark"]{--bg:#0a1b2e;--ink:#e8f4f6;--mute:#a9c3cf;--pine:#3cc9c0;--blue:#0a4a96;--forest:#3fbf7f;--onf:#06231a;--card:#10283f;--line:rgba(232,244,246,.22)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.6 var(--bd);overflow-x:hidden}
+h1,h2,h3{font-family:var(--hd);font-weight:800;line-height:.95;margin:0;letter-spacing:.01em}
+a{color:inherit}
+.w{max-width:1100px;margin:0 auto;padding:0 22px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:4px solid;border-image:linear-gradient(90deg,var(--blue),var(--forest)) 1}
+header .w{display:flex;justify-content:space-between;align-items:center;height:60px}
+.logo{font:800 1.5rem var(--hd);text-decoration:none}
+nav a{margin-left:20px;text-decoration:none;font-weight:600;font-size:.95rem}
+nav a:hover{text-decoration:underline}
+.hero{padding:56px 0 0;background:var(--blue);color:#fff}
+.hero .w{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
+h1{font-size:clamp(3.2rem,9vw,6.6rem)}
+.lead{max-width:34ch;color:var(--mute);margin:22px 0 28px;font-size:1.15rem}
+.btn{display:inline-block;background:var(--forest);color:var(--onf);font:600 1rem var(--bd);padding:14px 24px;border:0;border-radius:6px;cursor:pointer;text-decoration:none}
+.btn:hover{filter:brightness(1.1)}.btn.ghost{background:none;color:var(--ink);border:1.5px solid var(--ink);margin-left:8px}
+:focus-visible{outline:3px solid var(--pine);outline-offset:3px}
+.planet{position:relative;aspect-ratio:1;max-width:440px;width:100%;margin:auto}
+.planet svg{width:100%;height:100%;overflow:visible}
+.drift{animation:drift 36s linear infinite}@keyframes drift{to{transform:translateX(-400px)}}
+.orbit{animation:spin 14s linear infinite;transform-origin:200px 200px}
+.orbit g{animation:spin 14s linear infinite reverse;transform-box:fill-box;transform-origin:center}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.band{background:var(--forest);color:var(--onf);overflow:hidden;white-space:nowrap;padding:10px 0;font:800 1.5rem var(--hd)}
+.band span{display:inline-block;animation:mq 30s linear infinite;padding-right:2rem}
+@keyframes mq{to{transform:translateX(-50%)}}
+section{padding:80px 0}
+h2{font-size:clamp(2.4rem,6vw,4.2rem);margin-bottom:34px}
+.row{display:grid;grid-template-columns:230px 1fr;gap:28px;align-items:center;padding:22px 0;border-top:1px solid var(--line)}
+.row svg{width:100%;height:auto}.row h3{font-size:2.2rem;margin-bottom:8px}.row p{margin:0;color:var(--mute);max-width:52ch}
+.cycle{display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:c}
+.cycle div{border-top:6px solid var(--forest);padding:18px 18px 0 0;counter-increment:c}
+.cycle div::before{content:counter(c);font:800 2.6rem var(--hd);color:var(--forest)}
+.cycle b{display:block;font:800 1.7rem var(--hd)}.cycle span{color:var(--mute);font-size:.95rem}
+.conf{background:var(--card);border-top:4px solid var(--forest)}
+.conf .w{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.view{position:sticky;top:76px;background:var(--bg);border:2px dashed var(--line);border-radius:10px;padding:14px}
+.view svg{width:100%;height:auto;display:block}.view p{margin:6px 0 0;text-align:center;font-weight:600}
+.step{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .6s,opacity .6s}
+.step>div{overflow:hidden}.step.on{grid-template-rows:1fr;opacity:1}
+.step h3{font-size:1.7rem;margin:6px 0 12px}.step>div>*:last-child{margin-bottom:28px}
+.opts{display:grid;gap:10px}
+.opt{text-align:left;background:none;color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:12px 16px;font:600 1rem var(--bd);cursor:pointer}
+.opt small{display:block;font-weight:400;color:var(--mute)}
+.opt[aria-pressed=true]{border-color:var(--forest);box-shadow:inset 5px 0 0 var(--forest)}
+label{display:block;font-weight:600;margin:10px 0 2px}label output{float:right;font-weight:400;color:var(--mute)}
+input[type=range]{width:100%;accent-color:var(--forest)}
+input[type=text],input[type=number]{width:100%;padding:11px;border:1.5px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);font:1rem var(--bd)}
+.sum{background:var(--bg);border-left:6px solid var(--pine);padding:14px 16px;margin-bottom:14px;white-space:pre-line}
+footer{padding:0 0 50px;text-align:center;background:var(--blue);color:#fff}footer h2{margin-bottom:10px}footer p{margin:4px 0;color:#d6e8fb}
+@media(max-width:800px){.hero .w,.conf .w{grid-template-columns:1fr}.row{grid-template-columns:1fr}.row svg{max-width:240px}.cycle{grid-template-columns:1fr 1fr;gap:14px}.view{position:static}nav a:not(:last-child){display:none}}
+.hero .lead{color:#d6e8fb}.hero .btn{background:#fff;color:#0a3f7d}.hero .btn.ghost{background:none;color:#fff;border-color:#fff}.hero :focus-visible{outline-color:#fff}
+.wave{display:block;width:100%;height:90px;margin-top:24px}footer .wave{margin-top:0}
+.wave path{animation:sway 9s ease-in-out infinite alternate}.wave path+path{animation-duration:12s;animation-direction:alternate-reverse}
+@keyframes sway{to{transform:translateX(-50px)}}
+#tip{position:fixed;z-index:20;left:0;top:0;max-width:290px;display:flex;gap:10px;align-items:flex-start;background:var(--ink);color:var(--bg);padding:10px 8px 10px 14px;border-radius:8px;font-size:.92rem;line-height:1.45;visibility:hidden;opacity:0;transition:opacity .15s}#tip.on{visibility:visible;opacity:1}
+#tx{flex:none;background:none;border:0;color:inherit;font:1.4rem/1 var(--bd);cursor:pointer;padding:0 6px}
+[data-tip]{cursor:pointer}.hint{color:var(--mute);margin:-22px 0 22px}
+#galeria .hint{margin-top:-22px}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tile{padding:0;border:0;background:none;text-align:left;cursor:pointer;color:var(--ink);font:inherit}
+.tile svg{width:100%;display:block;border-radius:10px;aspect-ratio:4/3}.tile:hover svg{filter:brightness(1.07)}
+.tile span{display:block;font-weight:600;margin-top:8px}
+#lb{position:fixed;inset:0;z-index:30;background:rgba(5,15,30,.9);display:none;flex-direction:column;align-items:center;justify-content:center;padding:20px;color:#fff;text-align:center}
+#lb.on{display:flex}#lb .lr{display:flex;align-items:center;gap:10px}#lbv svg{width:min(80vw,720px);height:auto;border-radius:12px;display:block}
+#lb button{background:rgba(255,255,255,.16);color:#fff;border:0;border-radius:50%;width:44px;height:44px;font:2rem/1 var(--bd);cursor:pointer}
+#lbx{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:16px}#lbc{margin:14px 0 0;font-weight:600}
+.map{background:var(--card);border-top:4px solid var(--blue)}
+.mapg{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.mp{width:100%;height:auto;border-radius:12px;display:block}
+.mp text{font:600 14px var(--bd);fill:var(--ink);paint-order:stroke;stroke:var(--card);stroke-width:4px}
+.mp .ci{cursor:pointer}.pulse{animation:pl 2s ease-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes pl{from{transform:scale(1);opacity:.8}to{transform:scale(2.8);opacity:0}}
+.mapg h3{font-size:2.4rem;margin-bottom:12px}.mapg p{color:var(--mute);max-width:44ch}
+details{border-top:1px solid var(--line);padding:16px 0}details:last-of-type{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;font:800 1.7rem/1.1 var(--hd);list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}summary::after{content:'+';color:var(--forest);font-size:1.9rem;line-height:1}
+details[open] summary::after{content:'\2212'}details p{margin:10px 0 0;max-width:62ch;color:var(--mute)}
+@media(max-width:800px){.gal{grid-template-columns:1fr 1fr}.mapg{grid-template-columns:1fr}}
+@media(max-width:520px){.gal{grid-template-columns:1fr}}
+#st5 .btn{margin:0 8px 8px 0}
+.btn,.opt{position:relative;overflow:hidden;transition:transform .15s,box-shadow .15s,filter .15s,border-color .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 6px 14px rgba(0,0,0,.22)}.btn:active{transform:translateY(0) scale(.97);box-shadow:none}
+.opt:hover{border-color:var(--forest);transform:translateX(4px)}.opt:active{transform:scale(.98)}
+.opt[aria-pressed=true]::after{content:'\2713';position:absolute;right:16px;top:50%;transform:translateY(-50%);color:var(--forest);font-weight:800;font-size:1.2rem}
+.rip{position:absolute;border-radius:50%;background:currentColor;pointer-events:none;transform:scale(0);animation:rp .6s ease-out}
+@keyframes rp{from{transform:scale(0);opacity:.3}to{transform:scale(1);opacity:0}}
+.tile svg{transition:transform .2s,filter .2s}.tile:hover svg{transform:scale(1.02)}.tile:active svg{transform:scale(.99)}
+summary{transition:color .15s}summary:hover{color:var(--forest)}
+#lb button{transition:background .15s,transform .15s}#lb button:hover{background:rgba(255,255,255,.32);transform:scale(1.08)}#lb button:active{transform:scale(.94)}
+#tx{transition:transform .15s}#tx:hover{transform:scale(1.2)}
+.flash h2{animation:fl 1.6s ease-out}@keyframes fl{from{background:rgba(18,160,160,.35)}to{background:transparent}}
+</style>
+</head>
+<body>
+<header><div class="w"><a class="logo" href="#topo">PLANETA PALETS</a><nav><a href="#fazemos">O que fazemos</a><a href="#galeria">Galeria</a><a href="#mapa">Onde estamos</a><a href="#perguntas">Perguntas</a><a href="#montar">Monte o seu</a></nav></div></header>
+
+<main id="topo">
+<div class="hero"><div class="w">
+<div>
+<h1>O palete do tamanho exato da sua carga.</h1>
+<p class="lead">Paletes sob medida, reciclados e no padrão PBR, feitos em Canelinha, SC.</p>
+<a class="btn" href="#montar">Montar meu palete</a><a class="btn ghost" href="#fazemos">Ver modelos</a>
+</div>
+<div class="planet" data-tip="Paletes movimentam cargas no mundo todo. Aqui, o seu é feito em Canelinha, SC." aria-label="Planeta Terra com um palete em órbita">
+<svg viewBox="0 0 400 400" role="img"><defs><clipPath id="cp"><circle cx="200" cy="200" r="150"/></clipPath>
+<radialGradient id="sh" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset=".6" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#001a3a" stop-opacity=".55"/></radialGradient>
+<g id="tile"><g fill="#2fb36b" stroke="#1d8a50" stroke-width="2"><path d="M30 90Q60 70 85 95Q95 120 80 140Q95 165 85 195Q70 230 60 270Q45 250 50 215Q35 180 40 150Q20 120 30 90Z"/><path d="M180 100Q205 85 225 100Q240 125 230 150Q245 180 225 215Q205 240 190 215Q175 180 180 150Q165 125 180 100Z"/><path d="M250 85Q290 70 330 90Q360 110 345 140Q320 150 300 140Q280 165 262 140Q245 115 250 85Z"/><path d="M120 230Q140 225 145 245Q130 255 120 245Z"/></g>
+<g fill="#fff" opacity=".55"><ellipse cx="120" cy="120" rx="34" ry="8"/><ellipse cx="290" cy="200" rx="40" ry="9"/><ellipse cx="60" cy="300" rx="30" ry="7"/></g></g></defs>
+<circle cx="200" cy="200" r="162" fill="#7cc4ff" opacity=".28"/>
+<g clip-path="url(#cp)"><rect x="50" y="50" width="300" height="300" fill="#1673d1"/><g class="drift"><use href="#tile"/><use href="#tile" x="400"/></g>
+<ellipse cx="200" cy="52" rx="110" ry="20" fill="#fff" opacity=".85"/><ellipse cx="200" cy="348" rx="110" ry="20" fill="#fff" opacity=".85"/></g>
+<circle cx="200" cy="200" r="150" fill="url(#sh)"/>
+<circle cx="200" cy="200" r="150" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="3"/>
+<ellipse cx="200" cy="200" rx="190" ry="190" fill="none" stroke="#fff" stroke-opacity=".45" stroke-width="2" stroke-dasharray="3 9"/>
+<g class="orbit"><g><svg id="orb" x="170" y="-22" width="60" height="50" viewBox="0 0 400 300"></svg></g></g>
+</svg></div>
+</div>
+<svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M-60 55C240 120 480 0 720 50S1200 110 1500 40V120H-60Z" fill="var(--forest)"/><path d="M-60 88C260 35 520 125 780 82S1230 45 1500 85V120H-60Z" fill="var(--bg)"/></svg>
+</div>
+<div class="band" aria-hidden="true"><span id="mq"></span></div>
+
+<section id="fazemos"><div class="w">
+<h2>O que fazemos</h2>
+<p class="hint">Clique em um item para ver mais informações.</p>
+<div class="row" data-tip="Sob medida: você define comprimento, largura, altura e a carga. Clique nas peças do desenho para ver a função de cada uma."><svg id="s1" viewBox="0 0 400 300" role="img" aria-label="Palete sob medida"></svg><div><h3>Sob medida</h3><p>Você informa comprimento, largura, altura e carga. Fabricamos o palete para a sua embalagem, sem desperdício de espaço no caminhão.</p></div></div>
+<div class="row" data-tip="Reciclável: palete usado, reformado com tábuas e blocos trocados, para reduzir o uso de madeira nova."><svg id="s2" viewBox="0 0 400 300" role="img" aria-label="Palete reciclado"></svg><div><h3>Reciclável</h3><p>Paletes usados são recolhidos, selecionados e reformados para voltar à cadeia. Menos madeira nova e custo menor para quem usa em volume.</p></div></div>
+<div class="row" data-tip="Padrão PBR: 1,00 × 1,20 m, medida muito usada no mercado brasileiro."><svg id="s3" viewBox="0 0 400 300" role="img" aria-label="Palete padrão PBR"></svg><div><h3>Padrão PBR</h3><p>Medida padronizada de 1,00 × 1,20 m, a mais usada no mercado brasileiro, para quem precisa de reposição rápida.</p></div></div>
+</div></section>
+
+<section id="ciclo" style="padding-top:0"><div class="w">
+<h2>Palete bom volta a rodar</h2>
+<div class="cycle">
+<div data-tip="Primeira etapa: os paletes usados são recolhidos para reaproveitamento."><b>Coleta</b><span>Recolhemos paletes usados.</span></div>
+<div data-tip="Segunda etapa: cada palete é avaliado, e os que têm conserto seguem para reforma."><b>Triagem</b><span>Separamos o que dá para reaproveitar.</span></div>
+<div data-tip="Terceira etapa: tábuas e blocos danificados são trocados."><b>Reforma</b><span>Trocamos tábuas e blocos danificados.</span></div>
+<div data-tip="Última etapa: o palete reformado volta a ser usado na sua operação."><b>Volta ao uso</b><span>Entregue pronto para a sua operação.</span></div>
+</div></div></section>
+
+<section id="montar" class="conf"><div class="w">
+<div>
+<h2>Monte o seu palete</h2>
+<div class="step on" id="st1"><div><h3>Que tipo você precisa?</h3><div class="opts" id="tipos">
+<button class="opt" data-tip="Fabricado nas dimensões que você escolher, até 150 × 100 cm, com altura de até 12 cm." data-t="medida" aria-pressed="false">Sob medida<small>Defino as dimensões</small></button>
+<button class="opt" data-tip="Palete usado e reformado, com madeira reaproveitada. No desenho, a cor fica mais escura." data-t="reciclado" aria-pressed="false">Reciclado<small>Reformado, com menor custo</small></button>
+<button class="opt" data-tip="Medida padrão de mercado, 1,00 × 1,20 m. Ao escolher, as medidas se ajustam sozinhas." data-t="pbr" aria-pressed="false">Padrão PBR<small>1,00 × 1,20 m</small></button></div></div></div>
+<div class="step" id="st2"><div><h3>Quais as medidas?</h3>
+<label for="rl">Comprimento <output id="ol"></output></label><input type="range" data-tip="Comprimento: o lado maior do palete, de 60 a 150 cm." id="rl" min="60" max="150" step="5" value="120">
+<label for="rw">Largura <output id="ow"></output></label><input type="range" data-tip="Largura: o lado menor, de 60 a 100 cm." id="rw" min="60" max="100" step="5" value="100">
+<label for="rh">Altura <output id="oh"></output></label><input type="range" data-tip="Altura total, somando tábuas e blocos, de 10 a 12 cm." id="rh" min="10" max="12" step="1" value="12"></div></div>
+<div class="step" id="st3"><div><h3>Quanto peso ele vai carregar?</h3><div class="opts" id="cargas">
+<button class="opt" data-tip="Até 500 kg. Estrutura básica de tábuas." data-c="leve" aria-pressed="false">Leve<small>Até 500 kg</small></button>
+<button class="opt" data-tip="De 500 a 1.000 kg. Adiciona uma tábua superior." data-c="media" aria-pressed="false">Média<small>500 a 1.000 kg</small></button>
+<button class="opt" data-tip="Acima de 1.000 kg. Adiciona duas tábuas superiores para reforçar." data-c="pesada" aria-pressed="false">Pesada<small>Acima de 1.000 kg, com tábuas extras</small></button></div></div></div>
+<div class="step" id="st4"><div><h3>Quantas unidades e para quem?</h3>
+<label for="qt">Quantidade</label><input type="number" id="qt" min="1" value="50">
+<label for="nm">Seu nome ou empresa</label><input type="text" id="nm" autocomplete="name" placeholder="Digite para ver o resumo"></div></div>
+<div class="step" id="st5"><div><h3>Seu pedido</h3><div class="sum" id="sum" data-tip="Resumo do pedido: este é o texto que vai para o WhatsApp. Confira tipo, medidas, carga e quantidade antes de enviar."></div>
+<a class="btn" id="zap" href="#" target="_blank" rel="noopener">Pedir orçamento no WhatsApp</a>
+<button class="btn ghost" id="cp2" type="button">Copiar pedido</button> <a class="btn ghost" href="tel:+554832630153">Ligar (48) 3263-0153</a></div></div>
+</div>
+<div class="view"><svg id="pv" viewBox="0 0 400 300" role="img" aria-label="Pré-visualização do palete"></svg><p id="cap" data-tip="Medidas do palete e quantidade de tábuas e blocos. Clique nas peças do desenho para ver o que cada uma faz.">Escolha um tipo para começar</p></div>
+</div></section>
+
+<section id="galeria"><div class="w"><h2>Galeria</h2><p class="hint">Clique em uma imagem para ampliar.</p><div class="gal" id="gal"></div></div></section>
+
+<section id="mapa" class="map"><div class="w mapg">
+<svg class="mp" viewBox="0 0 420 420" role="img" aria-label="Mapa esquemático da região de Canelinha, SC">
+<rect width="420" height="420" fill="var(--forest)" opacity=".16"/>
+<path d="M310 0C305 40 296 62 298 90C302 130 300 165 296 185C310 215 350 235 340 275C325 320 285 345 280 420H420V0Z" fill="var(--blue)" opacity=".3"/>
+<path d="M288 0V420" stroke="var(--ink)" stroke-opacity=".45" stroke-width="2" stroke-dasharray="7 6" fill="none"/>
+<text x="294" y="336" style="font-size:11px;fill:var(--mute)">BR-101</text>
+<g id="cities"></g>
+<g transform="translate(28 40)"><path d="M0-18L8 6L0 0L-8 6Z" fill="var(--ink)"/><text y="24" text-anchor="middle" style="font-size:12px">N</text></g>
+<text x="14" y="408" style="font-size:11px;fill:var(--mute)">Mapa esquemático, fora de escala</text>
+</svg>
+<div><h3>Onde estamos</h3><p><b>Rua Tolentino Costa, Papagaios<br>Canelinha, Santa Catarina</b></p><p>Telefone: <a href="tel:+554832630153">(48) 3263-0153</a>. Clique nas cidades do mapa para ver como cada uma se situa em relação à empresa.</p>
+<a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=-27.285944945809078%2C-48.77033132741908">Abrir no Google Maps</a><a class="btn ghost" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=-27.285944945809078,-48.77033132741908">Como chegar</a><a class="btn ghost" href="tel:+554832630153">Ligar agora</a></div>
+</div></section>
+
+<section id="perguntas"><div class="w"><h2>Perguntas frequentes</h2>
+<details><summary>Vocês fazem paletes em medidas fora do padrão?</summary><p>Sim. No palete sob medida você informa comprimento, largura, altura e a carga. Use a seção "Monte o seu palete" para montar o pedido.</p></details>
+<details><summary>O que é um palete reciclado?</summary><p>É um palete usado que passa por triagem e reforma, com troca de tábuas e blocos danificados, para voltar ao uso e reduzir o consumo de madeira nova.</p></details>
+<details><summary>Qual a diferença entre o padrão PBR e o sob medida?</summary><p>O padrão PBR tem medida fixa de 1,00 × 1,20 m. No sob medida, as dimensões seguem a sua embalagem ou o seu produto.</p></details>
+<details><summary>Qual peso o palete aguenta?</summary><p>Depende da construção. No configurador você escolhe a faixa de carga, e as cargas mais pesadas recebem tábuas extras. A equipe confirma a capacidade final no orçamento.</p></details>
+<details><summary>Como peço um orçamento?</summary><p>Monte o palete na seção "Monte o seu palete", informe a quantidade e o seu nome e envie o resumo pelo WhatsApp.</p></details>
+<details><summary>Vocês entregam na minha cidade?</summary><p>A empresa fica em Canelinha, SC. Informe a sua cidade ao pedir o orçamento para a equipe confirmar a entrega.</p></details>
+<details><summary>Onde fica a empresa e como falo com vocês?</summary><p>Estamos na Rua Tolentino Costa, Papagaios, Canelinha, SC. O telefone é (48) 3263-0153.</p></details>
+</div></section>
+</main>
+<div id="lb" role="dialog" aria-modal="true" aria-label="Imagem ampliada"><button id="lbx" type="button" aria-label="Fechar">×</button><div class="lr"><button id="lbp" type="button" aria-label="Anterior">‹</button><div id="lbv"></div><button id="lbn" type="button" aria-label="Próxima">›</button></div><p id="lbc"></p></div>
+<div id="tip" role="status"><span id="tt"></span><button id="tx" type="button" aria-label="Fechar informação">×</button></div>
+
+<footer><svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M-60 0H1500V70C1200 110 960 20 720 60S240 100 -60 50Z" fill="var(--forest)"/><path d="M-60 0H1500V40C1230 70 980 0 720 35S250 70 -60 25Z" fill="var(--bg)"/></svg><div class="w"><h2>Planeta Palets</h2><p>Rua Tolentino Costa, Papagaios, Canelinha, Santa Catarina</p><p>Telefone: <a href="tel:+554832630153">(48) 3263-0153</a></p><p>Paletes sob medida, recicláveis e padrão PBR.</p></div></footer>
+
+<script>
+var WHATSAPP=''; /* coloque aqui o número com DDI e DDD, ex.: 5547999999999 */
+var $=function(s){return document.querySelector(s)};
+function shade(h,f){var n=parseInt(h.slice(1),16);return 'rgb('+((n>>16&255)*f|0)+','+((n>>8&255)*f|0)+','+((n&255)*f|0)+')'}
+function pallet(el,L,W,H,col,extra,nt){
+ var s=340/((L+W)*.866),ox=200-(L-W)/2*.866*s,oy=165-((L+W)*.25-H/2)*s,o='',t=2.2;
+ function P(x,y,z){return (ox+(x-y)*.866*s).toFixed(1)+','+(oy+(x+y)*.5*s-z*s).toFixed(1)}
+ function B(x,y,z,dx,dy,dz,tp){
+  o+='<g'+(nt?'':' data-tip="'+tp+'"')+'><polygon points="'+[P(x,y+dy,z),P(x+dx,y+dy,z),P(x+dx,y+dy,z+dz),P(x,y+dy,z+dz)]+'" fill="'+shade(col,.84)+'"/>'+
+  '<polygon points="'+[P(x+dx,y,z),P(x+dx,y+dy,z),P(x+dx,y+dy,z+dz),P(x+dx,y,z+dz)]+'" fill="'+shade(col,.66)+'"/>'+
+  '<polygon points="'+[P(x,y,z+dz),P(x+dx,y,z+dz),P(x+dx,y+dy,z+dz),P(x,y+dy,z+dz)]+'" fill="'+col+'"/></g>'}
+ [0,L/2-7,L-14].forEach(function(x){B(x,0,0,14,W,t,'Tábua inferior: apoia o palete no chão e distribui o peso.')});
+ [0,L/2-4.5,L-9].forEach(function(x){[0,W/2-4.5,W-9].forEach(function(y){B(x,y,t,9,9,H-2*t,'Bloco: mantém a distância entre as tábuas e deixa espaço para o garfo da empilhadeira.')})});
+ var n=Math.max(4,Math.round(W/17))+(extra||0),bw=10,g=(W-n*bw)/(n-1);
+ for(var i=0;i<n;i++)B(0,i*(bw+g),H-t,L,bw,t,'Tábua superior: é onde a sua carga fica apoiada.');
+ el.innerHTML='<g stroke="rgba(0,0,0,.3)" stroke-width=".7" stroke-linejoin="round">'+o+'</g>';return n}
+pallet($('#orb'),120,100,12,'#e8b04e');pallet($('#s1'),150,80,12,'#e2a94b');pallet($('#s2'),120,100,12,'#a87b4a',2);pallet($('#s3'),120,100,12,'#d9a85a');
+$('#mq').innerHTML=Array(12).join('SOB MEDIDA ✦ RECICLÁVEL ✦ PADRÃO PBR ✦ CANELINHA, SC ✦ ');
+/* configurador */
+var S={t:null,c:null,L:120,W:100,H:12},names={medida:'Sob medida',reciclado:'Reciclado',pbr:'Padrão PBR (1,00 × 1,20 m)'},cores={medida:'#e2a94b',reciclado:'#a87b4a',pbr:'#d9a85a'};
+function show(id){$(id).classList.add('on')}
+function sync(){$('#ol').textContent=S.L+' cm';$('#ow').textContent=S.W+' cm';$('#oh').textContent=S.H+' cm';$('#rl').value=S.L;$('#rw').value=S.W;$('#rh').value=S.H}
+function render(){
+ if(!S.t)return;var ex=S.c==='pesada'?2:S.c==='media'?1:0;
+ var n=pallet($('#pv'),S.L,S.W,S.H,cores[S.t],ex);S.n=n;
+ $('#cap').textContent=S.L+' × '+S.W+' × '+S.H+' cm · '+(n+3)+' tábuas e 9 blocos';summary()}
+function summary(){
+ var nm=$('#nm').value.trim(),q=$('#qt').value||1;
+ var txt='Olá, Planeta Palets! Gostaria de um orçamento.\nTipo: '+names[S.t]+'\nMedidas: '+S.L+' × '+S.W+' × '+S.H+' cm\nCarga: '+(S.c||'não informada')+'\nQuantidade: '+q+(nm?'\nNome: '+nm:'');
+ $('#sum').textContent=txt;S.txt=txt;
+ $('#zap').href='https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent(txt)}
+document.querySelectorAll('#tipos .opt').forEach(function(b){b.onclick=function(){
+ document.querySelectorAll('#tipos .opt').forEach(function(x){x.setAttribute('aria-pressed',x===b)});
+ S.t=b.dataset.t;if(S.t==='pbr'){S.L=120;S.W=100;S.H=12}sync();show('#st2');render()}});
+['rl','rw','rh'].forEach(function(id){$('#'+id).oninput=function(){S.L=+$('#rl').value;S.W=+$('#rw').value;S.H=+$('#rh').value;if(S.t==='pbr'){S.t='medida';document.querySelectorAll('#tipos .opt').forEach(function(x){x.setAttribute('aria-pressed',x.dataset.t==='medida')})}sync();show('#st3');render()}});
+document.querySelectorAll('#cargas .opt').forEach(function(b){b.onclick=function(){
+ document.querySelectorAll('#cargas .opt').forEach(function(x){x.setAttribute('aria-pressed',x===b)});S.c=b.dataset.c;show('#st4');render()}});
+$('#qt').oninput=summary;
+$('#nm').oninput=function(){if(this.value.trim().length>1)show('#st5');summary()};
+$('#cp2').onclick=function(){var b=this,ok=function(m){b.textContent=m;setTimeout(function(){b.textContent='Copiar pedido'},2200)};
+ var fb=function(){var g=document.createRange();g.selectNodeContents($('#sum'));var se=getSelection();se.removeAllRanges();se.addRange(g);ok('Texto selecionado: copie com Ctrl+C')};
+ try{navigator.clipboard.writeText(S.txt).then(function(){ok('Pedido copiado \u2713')},fb)}catch(e){fb()}};
+
+/* mapa */
+var CI=[['Canelinha',180,219,0,26,'middle','Planeta Palets fica aqui: Rua Tolentino Costa, Papagaios, Canelinha, SC. Telefone (48) 3263-0153.'],['Tijucas',280,182,-10,-10,'end','Tijucas: cidade vizinha, a leste de Canelinha, perto da BR-101.'],['São João Batista',123,214,0,-12,'middle','São João Batista: vizinha, a oeste de Canelinha.'],['Nova Trento',66,222,0,24,'middle','Nova Trento: a oeste, depois de São João Batista.'],['Brusque',73,70,10,5,'start','Brusque: ao norte-noroeste de Canelinha.'],['Itapema',294,62,-10,5,'end','Itapema: no litoral, ao norte, pela BR-101.'],['Biguaçu',258,382,-10,5,'end','Biguaçu: ao sul, pela BR-101.'],['Governador Celso Ramos',330,238,0,26,'middle','Governador Celso Ramos: no litoral, a leste-sudeste.']],ch='';
+CI.forEach(function(c,i){ch+='<g class="ci" data-tip="'+c[6]+'">'+(i?'':'<circle class="pulse" cx="'+c[1]+'" cy="'+c[2]+'" r="9" fill="none" stroke="var(--forest)" stroke-width="2"/>')+'<circle cx="'+c[1]+'" cy="'+c[2]+'" r="'+(i?6:9)+'" fill="'+(i?'var(--ink)':'var(--forest)')+'" stroke="var(--card)" stroke-width="2.5"/><text x="'+(c[1]+c[3])+'" y="'+(c[2]+c[4])+'" text-anchor="'+c[5]+'">'+c[0]+'</text></g>'});
+$('#cities').innerHTML=ch;
+/* galeria */
+function stk(n,x,y,w,L,W,H,col,ex){var a=[],st=H*340/((L+W)*.866)*w/400;for(var k=0;k<n;k++)a.push([x,y-k*st,w,L,W,H,col,ex]);return a}
+var SUN='<circle cx="330" cy="62" r="28" fill="#ffd36b"/>';
+var GA=[['Sob medida, do jeito que a carga pede',[[80,80,240,150,80,12,'#e2a94b',0]],SUN],['Pilhas prontas para entrega',stk(5,100,100,200,120,100,12,'#e2a94b',0),''],['Reciclados e reformados',stk(4,5,100,190,120,100,12,'#a87b4a',2).concat(stk(3,205,100,190,120,100,12,'#a87b4a',2)),''],['Padrão PBR, 1,00 × 1,20 m',[[70,80,260,120,100,12,'#d9a85a',0]],''],['Carga pesada, com tábuas extras',[[70,75,260,140,100,12,'#d9a85a',2]],''],['Feito em Canelinha, SC',stk(3,40,100,200,120,100,12,'#e2a94b',0).concat([[215,95,170,100,80,12,'#a87b4a',1]]),SUN]];
+var gh='';
+GA.forEach(function(g,i){var q='<svg viewBox="0 0 400 300" role="img" aria-label="Ilustração: '+g[0]+'"><defs><linearGradient id="sk'+i+'" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9fd0ff"/><stop offset="1" stop-color="#e3f6ee"/></linearGradient></defs><rect width="400" height="300" fill="url(#sk'+i+')"/>'+g[2]+'<path d="M0 210C80 180 140 240 230 205S350 180 400 205V300H0Z" fill="#12804b"/><path d="M0 245C90 215 170 275 260 240S360 225 400 245V300H0Z" fill="#0a5cb8"/>';
+ g[1].forEach(function(p,j){q+='<svg id="g'+i+'_'+j+'" x="'+p[0]+'" y="'+p[1]+'" width="'+p[2]+'" height="'+p[2]*.75+'" viewBox="0 0 400 300"></svg>'});
+ gh+='<button class="tile" type="button" data-i="'+i+'">'+q+'</svg><span>'+g[0]+'</span></button>'});
+$('#gal').innerHTML=gh;
+GA.forEach(function(g,i){g[1].forEach(function(p,j){pallet($('#g'+i+'_'+j),p[3],p[4],p[5],p[6],p[7],true)})});
+var cur=0;
+function lb(i){cur=(i+GA.length)%GA.length;$('#lbv').innerHTML=document.querySelectorAll('.tile')[cur].querySelector('svg').outerHTML.replace(/id="(sk|g)/g,'id="z$1');$('#lbc').textContent=GA[cur][0];$('#lb').classList.add('on')}
+document.querySelectorAll('.tile').forEach(function(b){b.onclick=function(){lb(+b.dataset.i)}});
+$('#lbx').onclick=function(){$('#lb').classList.remove('on')};$('#lbp').onclick=function(){lb(cur-1)};$('#lbn').onclick=function(){lb(cur+1)};
+$('#lb').onclick=function(e){if(e.target===this)this.classList.remove('on')};
+document.addEventListener('keydown',function(e){if(!$('#lb').classList.contains('on'))return;if(e.key==='Escape')$('#lb').classList.remove('on');if(e.key==='ArrowLeft')lb(cur-1);if(e.key==='ArrowRight')lb(cur+1)});
+var tip=$('#tip');
+function closeTip(){tip.classList.remove('on')}
+document.addEventListener('click',function(e){
+ if(e.target.closest('#tip')){if(e.target.id==='tx')closeTip();return}
+ var el=e.target.closest('[data-tip]');if(!el){closeTip();return}
+ var q=el.getBoundingClientRect(),x=e.detail?e.clientX:q.left,y=e.detail?e.clientY:q.bottom-18;
+ $('#tt').textContent=el.dataset.tip;tip.classList.add('on');
+ var w=tip.offsetWidth,h=tip.offsetHeight,l=Math.max(8,Math.min(x+14,innerWidth-w-8)),t=y+18;
+ if(t+h>innerHeight-8)t=y-h-12;tip.style.left=l+'px';tip.style.top=Math.max(8,t)+'px'});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeTip()});
+
+var nt;
+function note(m,el){var q=el.getBoundingClientRect();$('#tt').textContent=m;tip.classList.add('on');tip.style.left=Math.max(8,Math.min(q.left,innerWidth-tip.offsetWidth-8))+'px';var t=q.top-tip.offsetHeight-10;tip.style.top=(t<8?q.bottom+10:t)+'px';clearTimeout(nt);nt=setTimeout(closeTip,2600)}
+document.addEventListener('click',function(e){
+ var b=e.target.closest('.btn,.opt');
+ if(b){var q=b.getBoundingClientRect(),m=Math.max(q.width,q.height),x=e.detail?e.clientX-q.left:q.width/2,y=e.detail?e.clientY-q.top:q.height/2,p=document.createElement('span');p.className='rip';p.style.cssText='width:'+2*m+'px;height:'+2*m+'px;left:'+(x-m)+'px;top:'+(y-m)+'px';b.appendChild(p);setTimeout(function(){p.remove()},650)}
+ var a=e.target.closest('a[href^="#"]');
+ if(a&&a.getAttribute('href').length>1){var tg=document.querySelector(a.getAttribute('href'));if(tg){setTimeout(function(){tg.classList.add('flash');setTimeout(function(){tg.classList.remove('flash')},1700)},450)}}
+ var tl=e.target.closest('a[href^="tel:"]');
+ if(tl&&!matchMedia('(pointer:coarse)').matches){e.preventDefault();var n='(48) 3263-0153';
+  try{navigator.clipboard.writeText(n).then(function(){note('Número copiado: '+n,tl)},function(){note('Ligue para '+n,tl)})}catch(er){note('Ligue para '+n,tl)}}
+});
+sync();
+</script>
+</body>
+</html>
